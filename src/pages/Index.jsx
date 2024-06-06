@@ -1,5 +1,11 @@
-import { Box, Container, Flex, Heading, HStack, IconButton, Input, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, HStack, IconButton, Image, Input, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import { FaSearch, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+
+const authors = [
+  { name: "John Doe", photo: "/images/john_doe.jpg" },
+  { name: "Jane Smith", photo: "/images/jane_smith.jpg" },
+  { name: "Alice Johnson", photo: "/images/alice_johnson.jpg" },
+];
 
 const Index = () => {
   return (
@@ -35,6 +41,10 @@ const Index = () => {
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
             </Text>
+            <Flex align="center" mt={2}>
+              <Image src={authors[0].photo} alt={authors[0].name} boxSize="40px" borderRadius="full" mr={2} />
+              <Text>{authors[0].name}</Text>
+            </Flex>
           </Box>
 
           {/* Grid of Articles */}
@@ -51,6 +61,10 @@ const Index = () => {
                   <Text>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
                   </Text>
+                  <Flex align="center" mt={2}>
+                    <Image src={authors[index % authors.length].photo} alt={authors[index % authors.length].name} boxSize="40px" borderRadius="full" mr={2} />
+                    <Text>{authors[index % authors.length].name}</Text>
+                  </Flex>
                 </Box>
               ))}
             </Flex>
