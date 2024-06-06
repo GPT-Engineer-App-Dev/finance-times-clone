@@ -19,7 +19,7 @@ const Index = () => {
           <HStack spacing={4}>
             <Link href="#">Home</Link>
             <Link href="#">World</Link>
-            <Link href="#">Politics</Link>
+            <Link href="/politics">Politics</Link>
             <Link href="#">Business</Link>
             <Link href="#">Tech</Link>
           </HStack>
